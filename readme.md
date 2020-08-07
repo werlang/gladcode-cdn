@@ -15,6 +15,6 @@ GladCode is a simulator and web system where people use their programming skills
 
 ------------
 
-**Or check the public simulator repo **
+**Or check the public simulator repo**
 
 [![werlang/gladcode - GitHub](https://gh-card.dev/repos/werlang/gladcode.svg)](https://github.com/werlang/gladcode)
