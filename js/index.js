@@ -1,4 +1,4 @@
-// test2
+// test3
 $(document).ready( function() {
     $('#header').addClass('big');
     $('#header-container').addClass('small');
