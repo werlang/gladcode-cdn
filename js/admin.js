@@ -28,36 +28,37 @@ $(document).ready( async function(){
     });
     
     $('#update #send.button').click( function(){
-        $.post("back_update.php",{
+        post("back_update.php",{
             action: "SET",
             version: $('#version #new').val(),
             keepup: $('#keep-updated input').prop('checked'),
             pass: $('#pass-div input').val(),
-        }).done( function(data){
-            //console.log(data);
+            link: $('#postlink input').val()
+        }).then( function(data){
+            console.log(data);
             if (data != "WRONGPASS"){
                 var changes = $('#changes textarea').val();
                 changes = changes.replace(/\r?\n/g, '<br/>');
                 //console.log(changes);
                 showMessage("Mensagem enviada. Aguarde. Não clique mais de uma vez antes de dar status 500 no console.");
 
-                $.post("back_sendmail.php",{
-                    action: "UPDATE",
-                    version: $('#version #new').val(),
-                    summary: changes,
-                    postlink: $('#postlink input').val()
-                }).done( function(data){
-                    console.log(data);
-                    try{
-                        data = JSON.parse(data);
-                        showMessage("Versão do sistema atualizada");
-                    }
-                    catch(e){
-                        console.log(e);
-                        showMessage("Erro");
-                    }
-                    $('button').removeAttr('disabled');
-                });
+                // $.post("back_sendmail.php",{
+                //     action: "UPDATE",
+                //     version: $('#version #new').val(),
+                //     summary: changes,
+                //     postlink: $('#postlink input').val()
+                // }).done( function(data){
+                //     console.log(data);
+                //     try{
+                //         data = JSON.parse(data);
+                //         showMessage("Versão do sistema atualizada");
+                //     }
+                //     catch(e){
+                //         console.log(e);
+                //         showMessage("Erro");
+                //     }
+                //     $('button').removeAttr('disabled');
+                // });
             }
             else{
                 alert("Wrong Password");
