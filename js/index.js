@@ -1,3 +1,4 @@
+// test
 $(document).ready( function() {
     $('#header').addClass('big');
     $('#header-container').addClass('small');
