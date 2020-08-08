@@ -35,7 +35,7 @@ $(document).ready( async function(){
             pass: $('#pass-div input').val(),
             link: $('#postlink input').val()
         }).then( function(data){ 
-            // teste3
+            // teste4
             console.log(data);
             if (data != "WRONGPASS"){
                 var changes = $('#changes textarea').val();
